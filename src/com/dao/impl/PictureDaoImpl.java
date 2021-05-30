@@ -23,12 +23,19 @@ public class PictureDaoImpl implements IPictureDao {
 
     @Override
     public int insertP(Picture picture) {
+//        QueryRunner qr = new QueryRunner(JdbcUtil.getDs());
+//        try {
+//            Object [] args={picture.getName(),picture.getBigHead()};
+//            return qr.update("insert into picture values (null,?,?)",args);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
         QueryRunner qr = new QueryRunner(JdbcUtil.getDs());
         try {
-            Object [] args={picture.getName(),picture.getBigHead()};
-            return qr.update("insert into picture values (null,?,?)  ",args);
+            return qr.update("insert into picture values (null,?,?)",picture.getName(),picture.getBigHead());
         } catch (SQLException e) {
             e.printStackTrace();
+
         }
         return 0;
     }

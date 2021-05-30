@@ -36,7 +36,7 @@
         >
             <td>${p.id}</td>
             <td>${p.name}</td>
-            <td>${p.bigHead}</td>
+            <td><img width="400px" src="${p.bigHead}" alt="图片未显示"></td>
         </tr>
     </c:forEach>
 </table>

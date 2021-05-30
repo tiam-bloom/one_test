@@ -9,8 +9,11 @@
 <html>
 <head>
     <title>上传图片界面</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="/layui/css/layui.css"  media="all">
     <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script>
+    <style>
+        .layui-upload-img{width: 92px; height: 92px;}
+    </style>
 </head>
 <body>
 <div align="center" style="display: none" id="addForm">
@@ -28,7 +31,7 @@
         </div>
 
     <form action="/page/addP" method="post">
-        <input type="hidden" id="bighead" name="bighead" value="">
+        <input type="hidden" id="bigHead" name="bigHead" value="">
         <input type="text" id="name" name="name" placeholder="请输入姓名...">
         <input type="submit" value="提交" />
     </form>
@@ -47,7 +50,8 @@
                 ,before: function(obj){
                     //预读本地文件示例，不支持ie8
                     obj.preview(function(index, file, result){
-                        $('#bighead').val(result);
+                        console.log(result);
+                        $('#bigHead').val(result);
                         $('#demo1').attr('src', result); //图片链接（base64）
                     });
 

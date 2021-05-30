@@ -20,11 +20,11 @@ public class Add extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         Map<String,String[]> map = req.getParameterMap();
-        System.out.println(map);
+//        System.out.println(map);
         Picture picture = BeanUT.mapToBean(map,Picture.class);
         System.out.println(picture);
         int i =service.addP(picture);
         //转
-        req.getRequestDispatcher("/show.jsp").forward(req,resp);
+        resp.sendRedirect(req.getContextPath()+"/showP");
     }
 }
