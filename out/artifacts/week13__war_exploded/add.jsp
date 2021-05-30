@@ -9,10 +9,10 @@
 <html>
 <head>
     <title>上传图片界面</title>
-    <link rel="stylesheet" href="/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css"  media="all">
     <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script>
     <style>
-        .layui-upload-img{width: 92px; height: 92px;}
+        .layui-upload-img{width: 356px; height: 200px;}
     </style>
 </head>
 <body>
